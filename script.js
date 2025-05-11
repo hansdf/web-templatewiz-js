@@ -35,14 +35,24 @@ let templates = [
         "Selecionado": false
     }
 ];
-  
+
+const container = document.getElementById("templateCheckboxes");
+
+templates.forEach((template, index) => {
+    container.innerHTML += `
+        <label>
+        <input type="checkbox" data-index="${index}" ${template.Selecionado ? "checked" : ""}>
+        ${template.Nome}
+        </label><br>
+    `;
+});
   
 function gerarMensagem() {
   
 }
   
 function copiarParaClipboard() {
-    var copiaTexto = document.getElementById("myInput");
+    var copiaTexto = document.getElementById("output");
     copiaTexto.select(); 
     navigator.clipboard.writeText(copiaTexto.value);
     alert("Copiado para ctrl c!");
