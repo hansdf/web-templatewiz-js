@@ -12,13 +12,32 @@ body {
     padding: 20px;
 }
 
+header {
+    text-align: center;
+}
+
 #app-box {
-    max-width: 1800px;
+    max-width: 1600px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex; 
+}
+
+#main-content {
+    display: flex;
     gap: 80px;
+    margin-top: 20px;
+}
+
+#checkboxes-container {
+    flex: 1;
+    margin-left: 15%;
+}
+
+#output-container {
+    min-width: 500px;
+    flex: 1;
+    text-align: center;
 }
