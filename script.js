@@ -57,3 +57,12 @@ function copiarParaClipboard() {
     navigator.clipboard.writeText(copiaTexto.value);
     alert("Copiado para ctrl c!");
 }
+
+function mudarParaNoturno() {
+    const elemento = document.getElementById("modo-noturno");
+    elemento.addEventListener("click", () => {
+        document.body.classList.toggle("modo-noturno");
+});
+}
+
+mudarParaNoturno();
