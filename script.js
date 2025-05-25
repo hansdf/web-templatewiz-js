@@ -74,9 +74,23 @@ templates.forEach((template, index) => {
 });
   
 function gerarMensagem() {
-  
+    const checkboxes = document.querySelectorAll('#templateCheckboxes input[type="checkbox"]');
+    const mensagemPartes = [];
+
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            const index = checkbox.getAttribute('data-index');
+            const template = templates[index];
+            if (template) {
+                mensagemPartes.push(template.Conteudo);
+            }
+        }
+    });
+
+    const mensagemFinal = mensagemPartes.join('\n\n');
+    document.getElementById('output').value = mensagemFinal;
 }
-  
+
 function copiarParaClipboard() {
     var copiaTexto = document.getElementById("output");
     copiaTexto.select(); 
